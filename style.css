@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+.container {
+    position: relative;
+    background-color: black;
+    overflow: hidden;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.tabs input {
+    display: none;
+}
+
+.limited {
+    width: 800px;
+    height: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.navigation-buttons {
+    position: absolute;
+    bottom: 2rem;
+    width: 100vw;
+    display: flex;
+    justify-content:center;
+    gap: 1rem;
+    z-index: 10;
+}
+
+.navigation-buttons label {
+    width: 3rem;
+    height: 1rem;
+    background-color: rgba(255, 255, 255, 0.25);
+    border: 1px solid white;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.tabs input:nth-child(1):checked ~ .navigation-buttons label:nth-child(1),
+.tabs input:nth-child(2):checked ~ .navigation-buttons label:nth-child(2),
+.tabs input:nth-child(3):checked ~ .navigation-buttons label:nth-child(3) {
+    opacity: 1;
+    width: 1rem;
+    background-color: white;
+    filter: drop-shadow(0 0 .25rem white);
+    pointer-events: none;
+}
+
+.content {
+    position: relative;
+    width: 300vw;
+    height: 50vh;
+    min-height: 30rem;
+    display: flex;
+    transition: 0.5s ease-out;
+}
+
+.content .screen {
+    position: relative;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.content .screen .textBlock {
+    user-select: none;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    z-index: 3;
+    width: 20rem;
+    top: -20rem;
+    transition: 0.5s ease-out;
+    transition-delay: 0.5s;
+}
+
+.content .screen:nth-child(1) .textBlock {
+    align-items: start ;
+    left: 3rem;
+}
+
+.content .screen:nth-child(2) .textBlock {
+    align-items: start;
+    left: 3rem;
+}
+
+.content .screen:nth-child(3) .textBlock {
+    align-items: end;
+    right: 5rem;
+}
+
+.content .screen .textBlock .titre {
+    position: relative;
+    font-weight: 700;
+}
+
+.content .screen:nth-child(3) .textBlock .message {
+    position: relative;
+    font-weight: 100;
+    text-align: right;
+}
+
+.content .screen .textBlock .message {
+    position: relative;
+    font-weight: 100;
+}
+
+.content .screen .textBlock .cta {
+    position: relative;
+    background-color: #FF4E50;
+    border-radius: 1rem;
+    width: 10rem;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+}
+
+.content .screen:nth-child(1) {
+    background: linear-gradient(60deg, #43CEA2, #185A9D);
+}
+
+.content .screen:nth-child(2) {
+    background: linear-gradient(60deg, #F9D423, #FF4E50);
+}
+
+.content .screen img {
+    position: absolute;
+    height: 100%;
+    transition: 0.5s ease-out;
+    transition-delay: .5s;
+    z-index: 0;
+}
+
+.content .screen:nth-child(1) img {
+    right: -50vw;
+    top: 25%;
+}
+
+.content .screen:nth-child(2) img {
+    right: 0;
+    top: 50%;
+    transform: scaleX(-1) scale(1);
+}
+
+.content .screen:nth-child(3) {
+    background: linear-gradient(60deg, #9D50BB, #4852aa);
+}
+
+.content .screen:nth-child(3) img {
+    left: -50vw;
+    top: 0;
+}
+
+.tabs input:nth-child(1):checked ~ .content .screen:nth-child(1) .textBlock {
+    top: 5rem;
+}
+
+.tabs input:nth-child(1):checked ~ .content {
+    left: 0;
+}
+
+.tabs input:nth-child(1):checked ~ .content .screen:nth-child(1) img {
+    right: 0;
+    top: 0;
+}
+
+.tabs input:nth-child(2):checked ~ .content .screen:nth-child(2) .textBlock {
+    top: 5rem;
+}
+
+.tabs input:nth-child(2):checked ~ .content {
+    left: -100vw;
+}
+
+.tabs input:nth-child(2):checked ~ .content .screen:nth-child(2) img {
+    top: 0;
+}
+
+.tabs input:nth-child(3):checked ~ .content .screen:nth-child(3) .textBlock {
+    top: 5rem;
+}
+
+.tabs input:nth-child(3):checked ~ .content {
+    left: -200vw;
+}
+
+.tabs input:nth-child(3):checked ~ .content .screen:nth-child(3) img {
+    left: -5rem;
+}
+
+.content .screen .contentBx {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}

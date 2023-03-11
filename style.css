@@ -142,7 +142,7 @@ html {
 }
 
 .content .screen:nth-child(1) img {
-    right: -50vw;
+    right: -50%;
     top: 25%;
 }
 
@@ -157,7 +157,7 @@ html {
 }
 
 .content .screen:nth-child(3) img {
-    left: -50vw;
+    left: -50%;
     top: 0;
 }
 
